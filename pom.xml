@@ -6,11 +6,11 @@
     <artifactId>pay-tool</artifactId>
     <version>1.0.0</version>
     <modules>
-        <module>pay-api-starter</module>
-        <module>pay-service</module>
+        <module>pay-api-spring-boot-starter</module>
+        <module>pay-app</module>
     </modules>
 
-    <name>pay-pool</name>
+    <name>pay-tool</name>
     <description>pay-tool</description>
 
     <packaging>pom</packaging>
@@ -23,6 +23,8 @@
         <skipTests>true</skipTests>
         <spring-boot.version>2.6.14</spring-boot.version>
         <lombol.version>1.18.12</lombol.version>
+        <wechatpay.version>0.2.8</wechatpay.version>
+        <wechatpay-httpclient.version>0.4.9</wechatpay-httpclient.version>
     </properties>
 
     <dependencyManagement>
@@ -33,6 +35,37 @@
                 <version>${spring-boot.version}</version>
                 <scope>import</scope>
                 <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-configuration-processor</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${spring-boot.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.github.wechatpay-apiv3</groupId>
+                <artifactId>wechatpay-java</artifactId>
+                <version>${wechatpay.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.wechatpay-apiv3</groupId>
+                <artifactId>wechatpay-apache-httpclient</artifactId>
+                <version>${wechatpay-httpclient.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
